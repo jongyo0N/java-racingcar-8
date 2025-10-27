@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.domain;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ public class InputParser {
         }
     }
 
-    private static int parseAttemptCounts() {
+    public static int parseAttemptCounts() {
         System.out.println("시도할 횟수는 몇 회인가요?");
         String line=Console.readLine();
 
