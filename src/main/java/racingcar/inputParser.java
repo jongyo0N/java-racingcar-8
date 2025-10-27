@@ -46,4 +46,28 @@ public class InputParser {
             }
         }
     }
+
+    private static int parseAttemptCounts() {
+        System.out.println("시도할 횟수는 몇 회인가요?");
+        String line=Console.readLine();
+
+        if (line == null) {
+            throw new IllegalArgumentException();
+        }
+
+        String trimmed = line.trim();
+        if (trimmed.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+
+        try {
+            int attempts = Integer.parseInt(trimmed);
+            if (attempts <= 0) {
+                throw new IllegalArgumentException();
+            }
+            return attempts;
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
